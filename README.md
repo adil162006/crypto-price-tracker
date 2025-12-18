@@ -1,16 +1,69 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Crypto Price Tracker
 
-Currently, two official plugins are available:
+Simple crypto price tracker built with React and Vite. Fetches data from the CoinGecko API and shows price, market data and details for individual coins.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**Live demo**: https://cypto-price-tracker-99.netlify.app/
 
-## React Compiler
+**Source (GitHub)**: https://github.com/adil162006/crypto-price-tracker
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+**Quick features:**
+- **Price list:** View top cryptocurrencies with current price and 24h change.
+- **Details page:** Click a coin to see market data and price history on `/coin/:id`.
+- **Responsive UI:** Works on desktop and mobile screens.
 
-## Expanding the ESLint configuration
+**Tech stack:** React, Vite, plain CSS, CoinGecko API
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+**Getting started**
+
+Prerequisites: Node.js (16+ recommended) and npm or Yarn.
+
+Install dependencies:
+
+```
+npm install
+```
+
+Run development server:
+
+```
+npm run dev
+```
+
+Build for production:
+
+```
+npm run build
+```
+
+Preview production build locally:
+
+```
+npm run preview
+```
+
+**Usage**
+- Open the app at `http://localhost:5173` (or the port shown by Vite).
+- Click any coin card on the home page to open the details view (for example: `/coin/bitcoin`).
+
+**Project structure (important files)**
+
+- `src/App.jsx` — App root and routes
+- `src/main.jsx` — App bootstrap
+- `src/pages/Home.jsx` — Home / listing page
+- `src/pages/CoinDetails.jsx` — Coin details page
+- `src/components/CryptoCard.jsx` — Card component for each coin
+- `src/api/coinGecko.js` — API helpers for CoinGecko
+- `src/utils/formatter.js` — helpers for number & currency formatting
+
+**API**
+This project uses the public CoinGecko API (no API key required). See `src/api/coinGecko.js` for request logic.
+
+**Notes & next steps**
+- Improve error handling and loading states.
+- Add caching or SWR for fewer network calls.
+- Add charts for price history (e.g., Chart.js or Recharts).
+
+**Author**: adil162006
+
+**License**: MIT
